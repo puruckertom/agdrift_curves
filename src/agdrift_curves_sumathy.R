@@ -36,23 +36,95 @@ a <- coef(vf2f)[1]
 b <- coef(vf2f)[2]
 y2 = a*exp(b*x)
 lines(x,y2,type='l',col='red')
-#5th order
-a_start = -0.1
-b_start = 0.1
-c_start = -0.1
-d_start = 0.1
-e_start = -0.1
-f_start = 0.45
-vf2f <- nls(y~a*x^5 + b*x^4 + c*x^3 + d *x^2 + e*x + f, 
-            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start))
+#6th order
+#aerial_vf2f
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.45
+vf2f <- nls(y~a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start))
 a = coefficients(vf2f)[1]
 b = coefficients(vf2f)[2]
 c = coefficients(vf2f)[3]
 d = coefficients(vf2f)[4]
 e = coefficients(vf2f)[5]
 f = coefficients(vf2f)[6]
-y3 <- a*x^5 + b*x^4 + c*x^3 + d *x^2 + e*x + f
+g = coefficients(vf2f)[7]
+y3 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
 lines(x,y3,type='l',col='blue')
+#aerial_f2m
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.35
+y <- agdrift$aerial_f2m
+x <- agdrift$distance_ft
+x[1] <- 0.0001
+plot(x,y,type='l')
+af2m <- nls(y~a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start))
+a = coefficients(af2m)[1]
+b = coefficients(af2m)[2]
+c = coefficients(af2m)[3]
+d = coefficients(af2m)[4]
+e = coefficients(af2m)[5]
+f = coefficients(af2m)[6]
+g = coefficients(af2m)[7]
+y31 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y31,type='l',col='slategray')
+#aerial_m2c
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.33
+y <- agdrift$aerial_m2c
+x <- agdrift$distance_ft
+x[1] <- 0.0001
+plot(x,y,type='l')
+am2c <- nls(y~a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start))
+a = coefficients(am2c)[1]
+b = coefficients(am2c)[2]
+c = coefficients(am2c)[3]
+d = coefficients(am2c)[4]
+e = coefficients(am2c)[5]
+f = coefficients(am2c)[6]
+g = coefficients(am2c)[7]
+y32 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y32,type='l',col='seagreen')
+#aerial_c2vc
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.30
+y <- agdrift$aerial_c2vc
+x <- agdrift$distance_ft
+x[1] <- 0.0001
+plot(x,y,type='l')
+ac2vc <- nls(y~a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start))
+a = coefficients(am2c)[1]
+b = coefficients(am2c)[2]
+c = coefficients(am2c)[3]
+d = coefficients(am2c)[4]
+e = coefficients(am2c)[5]
+f = coefficients(am2c)[6]
+g = coefficients(am2c)[7]
+y33 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y33,type='l',col='orange')
 #ground_lvf
 a_start<-0.5
 b_start<-1.25
