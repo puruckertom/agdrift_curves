@@ -54,8 +54,81 @@ d = coefficients(vf2f)[4]
 e = coefficients(vf2f)[5]
 f = coefficients(vf2f)[6]
 g = coefficients(vf2f)[7]
-y3 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
-lines(x,y3,type='l',col='blue')
+y36 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y36,type='l',col='blue')
+#7th order
+#aerial_vf2f
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = 0.45
+vf2f <- nls(y~a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start))
+a = coefficients(vf2f)[1]
+b = coefficients(vf2f)[2]
+c = coefficients(vf2f)[3]
+d = coefficients(vf2f)[4]
+e = coefficients(vf2f)[5]
+f = coefficients(vf2f)[6]
+g = coefficients(vf2f)[7]
+h = coefficients(vf2f)[8]
+y37 <- a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h
+lines(x,y37,type='l',col='red')
+#8th order
+#aerial_vf2f
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.45
+vf2f <- nls(y~a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start))
+a = coefficients(vf2f)[1]
+b = coefficients(vf2f)[2]
+c = coefficients(vf2f)[3]
+d = coefficients(vf2f)[4]
+e = coefficients(vf2f)[5]
+f = coefficients(vf2f)[6]
+g = coefficients(vf2f)[7]
+h = coefficients(vf2f)[8]
+i = coefficients(vf2f)[9]
+y38 <- a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i
+lines(x,y38,type='l',col='green')
+#9th order
+#aerial_vf2f
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.001
+j_start = 0.45
+vf2f <- nls(y~a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start,j=j_start))
+a = coefficients(vf2f)[1]
+b = coefficients(vf2f)[2]
+c = coefficients(vf2f)[3]
+d = coefficients(vf2f)[4]
+e = coefficients(vf2f)[5]
+f = coefficients(vf2f)[6]
+g = coefficients(vf2f)[7]
+h = coefficients(vf2f)[8]
+i = coefficients(vf2f)[9]
+j = coefficients(vf2f)[10]
+y39 <- a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j
+lines(x,y39,type='l',col='orange')
+
 #aerial_f2m
 a_start = 0.001
 b_start = -0.001
@@ -63,7 +136,7 @@ c_start = 0.001
 d_start = -0.001
 e_start = 0.001
 f_start = -0.001
-g_start = 0.35
+g_start = 0.40
 y <- agdrift$aerial_f2m
 x <- agdrift$distance_ft
 x[1] <- 0.0001
@@ -77,8 +150,80 @@ d = coefficients(af2m)[4]
 e = coefficients(af2m)[5]
 f = coefficients(af2m)[6]
 g = coefficients(af2m)[7]
-y31 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
-lines(x,y31,type='l',col='slategray')
+y46 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y46,type='l',col='slategray')
+
+#7th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = 0.40
+af2m <- nls(y~a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start))
+a = coefficients(af2m)[1]
+b = coefficients(af2m)[2]
+c = coefficients(af2m)[3]
+d = coefficients(af2m)[4]
+e = coefficients(af2m)[5]
+f = coefficients(af2m)[6]
+g = coefficients(af2m)[7]
+h = coefficients(af2m)[8]
+y47 <- a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h
+lines(x,y47,type='l',col='red')
+#8th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.40
+af2m <- nls(y~a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start))
+a = coefficients(af2m)[1]
+b = coefficients(af2m)[2]
+c = coefficients(af2m)[3]
+d = coefficients(af2m)[4]
+e = coefficients(af2m)[5]
+f = coefficients(af2m)[6]
+g = coefficients(af2m)[7]
+h = coefficients(af2m)[8]
+i = coefficients(af2m)[9]
+y48 <- a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i
+lines(x,y48,type='l',col='green')
+#9th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.001
+j_start = 0.35
+af2m <- nls(y~a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start,j=j_start))
+a = coefficients(af2m)[1]
+b = coefficients(af2m)[2]
+c = coefficients(af2m)[3]
+d = coefficients(af2m)[4]
+e = coefficients(af2m)[5]
+f = coefficients(af2m)[6]
+g = coefficients(af2m)[7]
+h = coefficients(af2m)[8]
+i = coefficients(af2m)[9]
+j = coefficients(af2m)[10]
+y49 <- a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j
+lines(x,y49,type='l',col='orange')
+
+
 #aerial_m2c
 a_start = 0.001
 b_start = -0.001
@@ -100,8 +245,81 @@ d = coefficients(am2c)[4]
 e = coefficients(am2c)[5]
 f = coefficients(am2c)[6]
 g = coefficients(am2c)[7]
-y32 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
-lines(x,y32,type='l',col='seagreen')
+y56 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y56,type='l',col='seagreen')
+#7th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = 0.33
+am2c <- nls(y~a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start))
+a = coefficients(am2c)[1]
+b = coefficients(am2c)[2]
+c = coefficients(am2c)[3]
+d = coefficients(am2c)[4]
+e = coefficients(am2c)[5]
+f = coefficients(am2c)[6]
+g = coefficients(am2c)[7]
+h = coefficients(am2c)[8]
+y57 <- a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h
+lines(x,y57,type='l',col='red')
+#8th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.33
+am2c <- nls(y~a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start))
+a = coefficients(am2c)[1]
+b = coefficients(am2c)[2]
+c = coefficients(am2c)[3]
+d = coefficients(am2c)[4]
+e = coefficients(am2c)[5]
+f = coefficients(am2c)[6]
+g = coefficients(am2c)[7]
+h = coefficients(am2c)[8]
+i = coefficients(am2c)[9]
+y58 <- a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i
+lines(x,y58,type='l',col='green')
+#9th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.001
+j_start = 0.33
+am2c <- nls(y~a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start,j=j_start))
+a = coefficients(am2c)[1]
+b = coefficients(am2c)[2]
+c = coefficients(am2c)[3]
+d = coefficients(am2c)[4]
+e = coefficients(am2c)[5]
+f = coefficients(am2c)[6]
+g = coefficients(am2c)[7]
+h = coefficients(am2c)[8]
+i = coefficients(am2c)[9]
+j = coefficients(am2c)[10]
+y59 <- a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j
+lines(x,y59,type='l',col='orange')
+
+
+
+
 #aerial_c2vc
 a_start = 0.001
 b_start = -0.001
@@ -123,8 +341,79 @@ d = coefficients(am2c)[4]
 e = coefficients(am2c)[5]
 f = coefficients(am2c)[6]
 g = coefficients(am2c)[7]
-y33 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
-lines(x,y33,type='l',col='orange')
+y6 <- a*x^6 + b*x^5 + c*x^4 + d *x^3 + e*x^2 + f*x+ g
+lines(x,y6,type='l',col='orange')
+#7th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = 0.30
+ac2vc <- nls(y~a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start))
+a = coefficients(ac2vc)[1]
+b = coefficients(ac2vc)[2]
+c = coefficients(ac2vc)[3]
+d = coefficients(ac2vc)[4]
+e = coefficients(ac2vc)[5]
+f = coefficients(ac2vc)[6]
+g = coefficients(ac2vc)[7]
+h = coefficients(ac2vc)[8]
+y67 <- a*x^7 + b*x^6 + c*x^5 + d *x^4 + e*x^3 + f*x^2+ g*x+ h
+lines(x,y67,type='l',col='red')
+#8th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.30
+ac2vc <- nls(y~a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start))
+a = coefficients(ac2vc)[1]
+b = coefficients(ac2vc)[2]
+c = coefficients(ac2vc)[3]
+d = coefficients(ac2vc)[4]
+e = coefficients(ac2vc)[5]
+f = coefficients(ac2vc)[6]
+g = coefficients(ac2vc)[7]
+h = coefficients(ac2vc)[8]
+i = coefficients(ac2vc)[9]
+y68 <- a*x^8 + b*x^7 + c*x^6 + d *x^5 + e*x^4 + f*x^3+ g*x^2+ h*x+ i
+lines(x,y68,type='l',col='green')
+#9th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.001
+j_start = 0.30
+ac2vc <- nls(y~a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start,j=j_start))
+a = coefficients(ac2vc)[1]
+b = coefficients(ac2vc)[2]
+c = coefficients(ac2vc)[3]
+d = coefficients(ac2vc)[4]
+e = coefficients(ac2vc)[5]
+f = coefficients(ac2vc)[6]
+g = coefficients(ac2vc)[7]
+h = coefficients(ac2vc)[8]
+i = coefficients(ac2vc)[9]
+j = coefficients(ac2vc)[10]
+y69 <- a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j
+lines(x,y69,type='l',col='blue')
+
+
 #ground_lvf
 a_start<-0.5
 b_start<-1.25
@@ -138,8 +427,34 @@ summary(glvf)
 a <- coef(glvf)[1]
 b <- coef(glvf)[2]
 c <- coef(glvf)[3]
-y4 = c/(1+a*x)^b
-lines(x,y4,type='l',col='red')
+y7 = c/(1+a*x)^b
+lines(x,y7,type='l',col='red')
+#9th order
+a_start = 0.001
+b_start = -0.001
+c_start = 0.001
+d_start = -0.001
+e_start = 0.001
+f_start = -0.001
+g_start = 0.001
+h_start = -0.001
+i_start = 0.001
+j_start = 0.35
+glvf <- nls(y~a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j, 
+            start=list(a=a_start,b=b_start,c=c_start,d=d_start,e=e_start,f=f_start,g=g_start,h=h_start,i=i_start,j=j_start))
+a = coefficients(glvf)[1]
+b = coefficients(glvf)[2]
+c = coefficients(glvf)[3]
+d = coefficients(glvf)[4]
+e = coefficients(glvf)[5]
+f = coefficients(glvf)[6]
+g = coefficients(glvf)[7]
+h = coefficients(glvf)[8]
+i = coefficients(glvf)[9]
+j = coefficients(glvf)[10]
+y79 <- a*x^9 + b*x^8 + c*x^7 + d *x^6 + e*x^5 + f*x^4+ g*x^3+ h*x^2+ i*x+ j
+lines(x,y79,type='l',col='orange')
+
 #ground_lfmc
 a_start<-2.3
 b_start<-1.10
