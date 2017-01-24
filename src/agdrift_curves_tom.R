@@ -50,3 +50,15 @@ e = coefficients(vf2f)[5]
 f = coefficients(vf2f)[6]
 y3 <- a*x^5 + b*x^4 + c*x^3 + d *x^2 + e*x + f
 lines(x,y3,type='l',col='blue')
+
+#ground_low
+a_start = .5
+b_start = 1.2
+c_start = 1.02
+x <- agdrift$distance_ft
+low_vf <- nls(y~c/(1+a*x)^b, start=list(a=a_start,b=b_start,c=c_start),trace=TRUE)
+a = coefficients(low_vf)[1]
+b = coefficients(low_vf)[2]
+c = coefficients(low_vf)[3]
+y4 <- c/(1+a*x)^b
+lines(x,y4,type='l',col='darkgreen')
